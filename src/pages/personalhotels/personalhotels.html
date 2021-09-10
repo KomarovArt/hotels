@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Гостиница</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-card>
+        <img src="{{hotels.imageUrl}}">
+        <ion-card-content>
+          <h2>{{hotels.title}}</h2>
+          <p>{{hotels.description}}</p>
+          <p>{{hotels.roomCost}} рублей в день</p>
+          <p>{{hotels.address}}</p>
+          <p>{{hotels.phone}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    <button ion-button (click)="dismiss()">Назад</button>
+  </ion-list>
+</ion-content>

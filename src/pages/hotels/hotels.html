@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Гостиницы</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-label>Стоимость гостиницы</ion-label>
+    <ion-item>
+      <ion-label floating>От</ion-label>
+      <ion-input type="number" [(ngModel)]="pricefrom"></ion-input>
+    </ion-item>"
+    <ion-item>
+         <ion-label floating>До</ion-label>
+         <ion-input type="number" [(ngModel)]="priceto"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Наличие парковки</ion-label>
+        <ion-checkbox color ="secondary" checked="false" [(ngModel)]="pricecheckbox"></ion-checkbox>
+    </ion-item>
+    <button ion-button (click)="goFilterAlert()">Найти</button>
+    <p>{{resultfromto}}</p>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item *ngFor="let hotel of resulthotels"  (click)="goPersonalHotels(hotel)">
+      <ion-avatar item-start>
+        <img src="{{hotel.imageUrl}}">
+      </ion-avatar>
+      <h2>{{hotel.title}}</h2>
+      <p>{{hotel.address}}</p>
+      <p>{{hotel.roomCost}}</p>
+    </button>
+    <p>Показанно гостиниц: {{resulthotels.length}}</p>
+  </ion-list>
+</ion-content>
